@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,6 +6,10 @@
 
 int main(int argc, char const *argv[])
 {
-    Log("I am int years old", 5);
+    char* words = "I am int years old, I said int years old\n";
+    //Log("I am int years old, I said int years old\n", 5);
+
+    ReplaceFormat(words);
+    //GetCurrentFile();
     return 0;
 }

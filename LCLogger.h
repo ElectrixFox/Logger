@@ -7,31 +7,18 @@
 #include <string.h>
 #include <stdarg.h>
 
+#include "LCString.h"
+
 enum TYPES
 {
     INT = '%d'
 };
 
-const char* ReplaceFormat(const char* fmt)
-{
-    char* format = malloc(sizeof(char*) * strlen(fmt));
-    strcpy(format, fmt);
-    
-}
+const char* ReplaceFormat(const char* fmt);
 
 // Use a finder function to find all of the instances of the macros for the format and then replace them.
-void Log(const char* format, ...)
-{
-    va_list args;
+void Log(const char* format, ...);
 
-    char* fmt = format;
-    ReplaceFormat(fmt);
-
-    va_start(args, format);
-
-    vfprintf(stdout, format, args);
-
-    va_end(args);
-}
+void GetCurrentFile();
 
 #endif

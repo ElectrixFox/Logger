@@ -1,6 +1,8 @@
 CXX = gcc
 CXXFLAGS = -I.
 
+LIBS = -L. -lLCStr
+
 APPNAME = main
 
 SRCFILES := $(wildcard *.c)
@@ -10,4 +12,4 @@ obj/%.o: %.c
 	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
 all: $(OBJFILES)
-	$(CXX) $(CXXFLAGS) $^ -o $(APPNAME)
+	$(CXX) $(CXXFLAGS) $^ -o $(APPNAME) $(LIBS)
